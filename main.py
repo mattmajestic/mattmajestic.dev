@@ -12,6 +12,10 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 def read_root(request: Request):
     return templates.TemplateResponse("credentials.html", {"request": request})
 
+@app.get("/ai_chat")
+async def bot_conversation(request: Request):
+    return templates.TemplateResponse("conversation.html", {"request": request})
+
 @app.get("/favicon.ico")
 async def favicon():
     return app.send_static_file("favicon.ico")
