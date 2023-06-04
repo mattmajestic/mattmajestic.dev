@@ -1,0 +1,30 @@
+#conversation-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+#input-container {
+  margin-top: 20px;
+}
+
+#input-text {
+  width: 300px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+#submit-button {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#submit-button:hover {
+  background-color: #45a049;
+}

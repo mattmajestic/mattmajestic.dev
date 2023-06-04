@@ -3,31 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Matt Majestic - AI Chat</title>
-  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/conversation.css">
   <link rel="icon" href="static/favicon.ico">
 </head>
 <body>
   <nav>
     <ul>
       <li><a href="/">About Me</a></li>
-      <li><a href="/ai_chat">AI Chat with Me</a></li>
+      <li><a href="/conversation">AI Chat with Me</a></li>
     </ul>
   </nav>
   <div class="container">
     <h1>Bot Conversation</h1>
-    <div class="conversation">
-      <div class="message">
-        <p>Talk to my personal AI model:</p>
-      </div>
-      <div class="user-input">
-        <input type="text" id="user-input" placeholder="Deploy Dockerfiles??">
-        <button id="submit-btn">Send</button>
-      </div>
-      <div class="bot-response" id="bot-response"></div>
-    </div>
-  </div>
+    <div id="conversation-container" class="container"></div>
 
+  <form id="chatbot-form" class="container">
+    <input id="chatbot-input" type="text" placeholder="Ask a question">
+    <button type="submit">Send</button>
+  </form>
+  </div>
   <script src="static/conversation.js"></script>
-  <script src="static/theme.js"></script>
 </body>
 </html>
