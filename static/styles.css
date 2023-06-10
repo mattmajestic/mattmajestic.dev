@@ -108,3 +108,28 @@ button {
   border: none;
   cursor: pointer;
 }
+
+/* Conversation styles */
+ul.conversation {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li.query,
+li.response {
+  width: 50%;
+  padding: 5px;
+}
+
+li.query {
+  background-color: #f2f2f2;
+  border-radius: 5px 5px 0 0;
+}
+
+li.response {
+  background-color: #e2e2e2;
+  border-radius: 0 0 5px 5px;
+}

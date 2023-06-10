@@ -1,30 +1,65 @@
-#conversation-container {
-  border: 1px solid #ccc;
+/* Conversation styles */
+.conversation-container {
+  margin-top: 20px;
+  border: 1px solid #131212;
+  border-radius: 5px;
   padding: 10px;
-  margin-bottom: 10px;
-  height: 300px;
+  max-height: 70vh; /* Adjust the maximum height as desired */
   overflow-y: auto;
 }
 
-#input-container {
-  margin-top: 20px;
+.conversation-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-#input-text {
-  width: 300px;
+.conversation-container li {
   padding: 5px;
-  font-size: 16px;
+  border-radius: 5px;
+  max-width: 70%; /* Adjust the maximum width as desired */
 }
 
-#submit-button {
+.user-message {
+  background-color: #070b7c;
+  color: #f7f5f5;
+  text-align: right;
+  align-self: flex-end;
+  margin-left: auto; /* Adjust the margin as desired */
+}
+
+.bot-message {
+  background-color: #f9fafa;
+  color: ##070b7c;
+  align-self: flex-start;
+  margin-right: auto; /* Adjust the margin as desired */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container input[type="text"] {
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.container button {
+  margin-left: 10px;
   padding: 5px 10px;
-  font-size: 16px;
-  background-color: #4CAF50;
-  color: white;
+  border-radius: 5px;
+  background-color: #0b4a8f;
+  color: #fff;
   border: none;
   cursor: pointer;
-}
-
-#submit-button:hover {
-  background-color: #45a049;
 }

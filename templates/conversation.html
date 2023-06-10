@@ -14,13 +14,20 @@
     </ul>
   </nav>
   <div class="container">
-    <h1>Bot Conversation</h1>
-    <div id="conversation-container" class="container"></div>
+    <h1>Ask my Custom AI/LLM</h1>
+    <div id="conversation-container" class="container">
+      <ul id="conversation" class="conversation">
+        <!-- Bot Message -->
+        <li class="bot-message">Ask my AI/LLM, mattGPT</li>
+        <!-- User Message -->
+        <li class="user-message">Matt's chatGPT style LLM consultant </li>
+      </ul>
+    </div>
 
-  <form id="chatbot-form" class="container">
-    <input id="chatbot-input" type="text" placeholder="Ask a question">
-    <button type="submit">Send</button>
-  </form>
+    <form id="chatbot-form" class="container">
+      <input id="chatbot-input" type="text" placeholder="Ask a question">
+      <button type="submit">Send</button>
+    </form>
   </div>
   <script src="static/conversation.js"></script>
 </body>
