@@ -15,8 +15,8 @@ tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
-def home():
-    return templates.TemplateResponse("credentials.html")
+def home(request: Request):
+    return templates.TemplateResponse("credentials.html", {"request": request})
 
 @app.post("/chatbot")
 async def chatbot(request: Request):
