@@ -32,3 +32,8 @@ async def chatbot(request: Request):
 @app.get("/conversation")
 def conversation(request: Request):
     return templates.TemplateResponse("conversation.html", {"request": request})
+
+@app.get("/download-resume-pdf")
+def download_resume():
+    resume_file_path = "static/resume.pdf"
+    return FileResponse(resume_file_path, filename="resume.pdf")
