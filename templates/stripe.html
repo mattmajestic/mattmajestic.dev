@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> Matt Majestic - Stripe Pay</title>
+  <link rel="icon" href="static/favicon.ico">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+          <li><a href="/"><i class="fas fa-user"></i> About Me</a></li>
+          <li><a href="/conversation"><i class="fas fa-comments"></i> AI Chat with Me</a></li>
+          <li><a href="/download-resume-pdf"><i class="fas fa-file-pdf"></i> View Resume</a></li>
+          <li><a href="/donate"><i class="fas fa-coffee"></i> Donate via Stripe</a></li>
+        </ul>
+      </nav>
+  <h1>Stripe Integration Example</h1>
+  <p>This is an example of integrating Stripe to take payments.</p>
+
+  <h2>Buy Me a Coffee</h2>
+  <stripe-buy-button
+    buy-button-id="buy_btn_1NI8qpBY7L5WREAJU7jQtXSF"
+    publishable-key="pk_test_51IhaciBY7L5WREAJwVMBrcxv5kBExAigZ1Ajl8yCSjyTdP3lAhhZ6BsAUAImY9rCrklgbyV6Gj86qHXnSlY3F8l500KHDNOg3s"
+  ></stripe-buy-button>
+
+  <h2>Scan QR Code</h2>
+  <img src="static/mattmajestic_dev_stripe.png" alt="Stripe QR Code">
+
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</body>
+</html>

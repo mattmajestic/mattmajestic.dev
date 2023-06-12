@@ -4,6 +4,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
+import stripe
 
 app = FastAPI()
 
@@ -37,3 +38,7 @@ def conversation(request: Request):
 def download_resume():
     resume_file_path = "static/resume.pdf"
     return FileResponse(resume_file_path, filename="resume.pdf")
+    
+@app.get("/donate")
+def donate(request: Request):
+    return templates.TemplateResponse("stripe.html", {"request": request})
