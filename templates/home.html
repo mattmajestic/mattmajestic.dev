@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Matt Majestic's Developer Portfolio</title>
+  <link rel="icon" href="static/favicon.ico">
+  <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card i {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+    <h1 class="nes-text">
+        <span>Matt</span>
+        <span>Majestic's</span>
+        <span>Developer</span>
+        <span>Portfolio</span>
+      </h1>
+  <div class="container">
+    <div class="card">
+      <a href="/credentials">
+        <i class="nes-octocat fa fa-github fa-4x"></i>
+        <h2>About Me</h2>
+        <p>My Skills</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/download-resume-pdf">
+        <i class="fa fa-file-pdf fa-4x"></i>
+        <h2>Download Resume</h2>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/conversation">
+        <i class="fa fa-comments fa-4x"></i>
+        <h2>AI Chat</h2>
+        <p>Hugging Face enabled</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/donate">
+        <i class="fa fa-coffee fa-4x"></i>
+        <h2>Donate</h2>
+        <p>Support me by making a donation</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
