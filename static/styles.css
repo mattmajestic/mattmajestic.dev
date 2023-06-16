@@ -85,3 +85,14 @@ body {
     top: 800px;
   }
 }
+
+.icon-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon-link:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
