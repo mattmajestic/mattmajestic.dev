@@ -1,90 +1,27 @@
-/* Global Styles */
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Courier New', monospace;
+.menu-header {
+  background-color: #f1f1f1;
+  padding: 10px;
 }
 
-/* Navigation Styles */
-nav {
-  background-color: #333;
-  padding: 10px 0;
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu li {
-  margin-right: 20px;
-}
-
-.menu a {
-  display: flex;
-  align-items: center;
-  color: #fff;
-  text-decoration: none;
-}
-
-.menu i {
-  margin-right: 5px;
-}
-
-/* Container Styles */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  flex-basis: 24%;
+  background-color: #fff;
   padding: 20px;
-}
-
-.container h1 {
-  color: #f1c40f;
   text-align: center;
-  font-size: 36px;
-  margin-bottom: 20px;
 }
 
-.container h2 {
-  color: #f1c40f;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.container p {
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-.container a {
-  color: #f1c40f;
+.card a {
   text-decoration: none;
+  color: #333;
 }
 
-.container a:hover {
-  color: #fff;
-}
-
-.container .contact-info p {
-  margin-bottom: 5px;
-}
-
-.container .core-competencies {
-  list-style-type: square;
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
-
-.container .employers {
-  white-space: pre-line;
-}
-
-.container .section-title {
-  color: #f1c40f;
-  font-size: 28px;
-  margin-top: 30px;
+.card i {
+  display: block;
   margin-bottom: 10px;
+  color: #333;
 }
