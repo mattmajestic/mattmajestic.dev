@@ -1,27 +1,87 @@
-.menu-header {
-  background-color: #f1f1f1;
-  padding: 10px;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
 }
 
 .card {
-  flex-basis: 24%;
-  background-color: #fff;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card a {
   text-decoration: none;
-  color: #333;
+  color: inherit;
 }
 
 .card i {
-  display: block;
+  font-size: 40px;
   margin-bottom: 10px;
-  color: #333;
+}
+
+.tetris-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(20, 40px);
+  border: 1px solid #000;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+.cell.active {
+  background-color: #00f;
+}
+
+.piece {
+  position: absolute;
+  top: 0;
+  left: 180px;
+  width: 80px;
+  height: 80px;
+  background-color: #f00;
+  animation: fall 4s infinite linear;
+}
+
+@keyframes fall {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 800px;
+  }
 }

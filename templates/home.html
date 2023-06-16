@@ -7,55 +7,14 @@
   <link rel="icon" href="static/favicon.ico">
   <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 20px;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    .card a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .card i {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1 class="nes-text">
-        <span>Majestic</span>
-        <span>Developer</span>
-        <span>Portfolio</span>
-      </h1>
+  <h1 class="nes-text">
+    <span>Majestic</span>
+    <span>Developer</span>
+    <span>Portfolio</span>
+  </h1>
   <div class="container">
     <div class="card">
       <a href="/credentials">
@@ -86,5 +45,14 @@
       </a>
     </div>
   </div>
+
+  <div class="tetris-container">
+    <div class="grid">
+      <!-- Tetris grid will be dynamically populated -->
+    </div>
+    <div class="piece"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
