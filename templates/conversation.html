@@ -4,6 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matt Majestic - AI Chat</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .container h1 {
+      margin-bottom: 1em;
+    }
+
+    .conversation {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .bot-message {
+      background-color: #DDD;
+      padding: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .user-message {
+      background-color: #F4F4F4;
+      padding: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    #chatbot-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1em;
+    }
+
+    #chatbot-input {
+      flex: 1;
+      padding: 0.5em;
+      margin-right: 0.5em;
+      border: none;
+    }
+
+    #chatbot-input:focus {
+      outline: none;
+    }
+
+    #chatbot-form button {
+      padding: 0.5em 1em;
+      border: none;
+      background-color: #6A7EC2;
+      color: white;
+      cursor: pointer;
+    }
+
+    #chatbot-form button:hover {
+      background-color: #3E55A1;
+    }
+  </style>
   <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="icon" href="static/favicon.ico">
@@ -19,14 +85,14 @@
   </nav>
   <div class="container">
     <h1>mattGPT</h1>
-    <div id="conversation-container" class="container">
+    <div id="conversation-container">
       <ul id="conversation" class="conversation">
         <li class="bot-message">I'm Matt's AI</li>
         <li class="user-message">Submit a Question</li>
       </ul>
     </div>
 
-    <form id="chatbot-form" class="container">
+    <form id="chatbot-form">
       <input id="chatbot-input" type="text" placeholder="Ask a question">
       <button type="submit">Send</button>
     </form>
