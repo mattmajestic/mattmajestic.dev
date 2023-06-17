@@ -1,8 +1,12 @@
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Added to stack elements vertically */
   align-items: center;
   height: 100vh;
+}
+
+h1 {
+  margin-bottom: 20px; /* Added to create space between h1 and grid */
 }
 
 .container {
