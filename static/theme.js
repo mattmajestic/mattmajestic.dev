@@ -1,37 +1,13 @@
-// Function to set the theme
-function setTheme(theme) {
-  const body = document.body;
-  body.className = theme;
-  localStorage.setItem('theme', theme);
-}
+// Get the mode toggle checkbox element
+const modeToggleCheckbox = document.getElementById('mode-toggle-checkbox');
 
-// Function to toggle between light and dark themes
-function toggleTheme() {
-  const body = document.body;
-  const currentTheme = body.className;
-
-  if (currentTheme === 'light') {
-    setTheme('dark');
-  } else if (currentTheme === 'dark') {
-    setTheme('light');
-  }
-}
-
-// Event listener for the theme switch toggle
-document.addEventListener('DOMContentLoaded', function() {
-  const themeSwitch = document.getElementById('themeSwitch');
-
-  // Check the stored theme preference
-  const storedTheme = localStorage.getItem('theme');
-  if (storedTheme) {
-    setTheme(storedTheme);
-    if (storedTheme === 'dark') {
-      themeSwitch.checked = true;
-    }
+// Add event listener for mode toggle checkbox
+modeToggleCheckbox.addEventListener('change', function() {
+  if (this.checked) {
+    // If checkbox is checked, enable dark mode
+    document.body.classList.add('dark-mode');
   } else {
-    setTheme('light'); // Set default theme to light
-    themeSwitch.checked = false; // Set toggle switch to unchecked
+    // If checkbox is unchecked, enable light mode
+    document.body.classList.remove('dark-mode');
   }
-
-  themeSwitch.addEventListener('change', toggleTheme);
 });

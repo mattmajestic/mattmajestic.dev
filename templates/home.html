@@ -8,9 +8,17 @@
   <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
-<body>
-    <h1><span class="nes-text is-primary">Majestic Developer Portfolio</span>
-      </h1>
+<body class="light-mode">
+  <h1>
+    <span class="nes-text is-primary">Majestic Developer Portfolio</span>
+  </h1>
+  <br>
+  <div class="mode-toggle">
+    <input type="checkbox" id="mode-toggle-checkbox">
+    <label for="mode-toggle-checkbox">
+      <i class="fas fa-adjust"></i> Theme Mode
+    </label>
+  </div>
   <div class="container">
     <div class="card">
       <a href="/credentials">
@@ -41,5 +49,6 @@
       </a>
     </div>
   </div>
+  <script src="static/theme.js"></script>
 </body>
 </html>
