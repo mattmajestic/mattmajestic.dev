@@ -43,3 +43,16 @@ async def download_resume():
 @app.get("/donate")
 async def donate(request: Request):
     return templates.TemplateResponse("stripe.html", {"request": request})
+
+@app.get("/blog")
+async def blog(request: Request):
+    return templates.TemplateResponse("blog-posts.html", {"request": request})
+
+@app.get("/blog-posts")
+async def get_blog_posts():
+    try:
+        with open("static/blog-posts.json") as file:
+            blog_posts = json.load(file)
+            return blog_posts
+    except FileNotFoundError:
+        return []
