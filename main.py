@@ -6,6 +6,7 @@ import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 import stripe
 import json
+import os
 
 app = FastAPI()
 
@@ -46,8 +47,17 @@ async def donate(request: Request):
     return templates.TemplateResponse("stripe.html", {"request": request})
 
 @app.get("/blog")
-async def blog(request: Request):
-    return templates.TemplateResponse("blog.html", {"request": request})
+async def get_blog_posts(request: Request):
+    try:
+        # Read the blog.json file
+        with open(os.path.join("static", "blog-posts.json")) as file:
+            blog_posts = json.load(file)
+
+        return templates.TemplateResponse("blog.html", {"request": request, "blog_posts": blog_posts})
+    except FileNotFoundError:
+        return templates.TemplateResponse("blog.html", {"request": request, "blog_posts": []})
+    except Exception as e:
+        return templates.TemplateResponse("error.html", {"request": request, "error_message": str(e)})
 
 @app.get("/blog-posts")
 async def get_blog_posts():

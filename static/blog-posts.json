@@ -1,20 +1,18 @@
 [
     {
-      "title": "My First Blog Post",
-      "author": "John Doe",
+      "title": "How this is made",
+      "author": "Matt Majestic",
       "content": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "Vivamus consequat augue augue, eget lobortis nisi pulvinar vitae.",
-        "Sed gravida, tortor non vulputate posuere, tortor ligula cursus purus, ac dignissim elit metus vitae est."
+        "Create Dev Portfolio in Python.",
+        "Try it out."
       ]
     },
     {
-      "title": "Another Blog Post",
-      "author": "Jane Smith",
+      "title": "Make your Own AI",
+      "author": "Matt Majestic",
       "content": [
-        "Phasellus dapibus feugiat tellus, et euismod nunc tempor ut.",
-        "Quisque ut velit eget sem ultrices sagittis.",
-        "Donec commodo iaculis mauris auctor suscipit."
+        "Make an AI to talk as you.",
+        "Check it out."
       ]
     }
   ]
