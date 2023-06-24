@@ -5,6 +5,7 @@ from fastapi.staticfiles import StaticFiles
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 import stripe
+import json
 
 app = FastAPI()
 
@@ -46,7 +47,7 @@ async def donate(request: Request):
 
 @app.get("/blog")
 async def blog(request: Request):
-    return templates.TemplateResponse("blog-posts.html", {"request": request})
+    return templates.TemplateResponse("blog.html", {"request": request})
 
 @app.get("/blog-posts")
 async def get_blog_posts():
