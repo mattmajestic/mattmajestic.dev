@@ -22,6 +22,10 @@ def home(request: Request):
 def credentials(request: Request):
     return templates.TemplateResponse("credentials.html", {"request": request})
 
+@app.get("/signin")
+def signin(request: Request):
+    return templates.TemplateResponse("signin.html", {"request": request})
+
 @app.post("/chatbot")
 async def chatbot(request: Request):
     data = await request.json()
