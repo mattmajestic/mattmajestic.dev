@@ -44,7 +44,7 @@ const startClerk = async () => {
   const script = document.createElement("script");
   script.setAttribute("data-clerk-publishable-key", publishableKey);
   script.async = true;
-  script.src = `https://cdn.jsdelivr.net/npm/@clerk/clerk-js@4/dist/clerk.browser.js`;
+  script.src = `https://flowing-hagfish-5.clerk.accounts.dev/npm/@clerk/clerk-js@4/dist/clerk.browser.js`;
   script.crossOrigin = "anonymous";
   script.addEventListener("load", startClerk);
   script.addEventListener("error", () => {
