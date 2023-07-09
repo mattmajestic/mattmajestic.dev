@@ -1,4 +1,20 @@
-const publishableKey = "pk_test_Zmxvd2luZy1oYWdmaXNoLTUuY2xlcmsuYWNjb3VudHMuZGV2JA"; // <- Add Publishable Key here
+const publishableKey = "pk_test_Zmxvd2luZy1oYWdmaXNoLTUuY2xlcmsuYWNjb3VudHMuZGV2JA"; // Add your Publishable Key here
+
+const handleSignUp = async () => {
+  try {
+    await Clerk.openSignUp();
+  } catch (error) {
+    console.error("Error opening sign up:", error);
+  }
+};
+
+const handleSignIn = async () => {
+  try {
+    await Clerk.openSignIn();
+  } catch (error) {
+    console.error("Error opening sign in:", error);
+  }
+};
 
 const startClerk = async () => {
   const Clerk = window.Clerk;
@@ -19,8 +35,8 @@ const startClerk = async () => {
       Clerk.mountUserButton(userButton);
       userButton.style.margin = "auto";
     }
-  } catch (err) {
-    console.error("Error starting Clerk: ", err);
+  } catch (error) {
+    console.error("Error starting Clerk:", error);
   }
 };
 
@@ -28,7 +44,7 @@ const startClerk = async () => {
   const script = document.createElement("script");
   script.setAttribute("data-clerk-publishable-key", publishableKey);
   script.async = true;
-  script.src = `https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js`;
+  script.src = `https://cdn.jsdelivr.net/npm/@clerk/clerk-js@4/dist/clerk.browser.js`;
   script.crossOrigin = "anonymous";
   script.addEventListener("load", startClerk);
   script.addEventListener("error", () => {
