@@ -7,9 +7,9 @@
 </head>
 <body>
   <h1>Sign In</h1>
-  
-  <div id="clerk-root"></div>
-  
+
+  <div id="sign-in"></div>
+
   <script
     async
     crossorigin="anonymous"
@@ -18,12 +18,13 @@
     type="text/javascript"
   ></script>
   <script>
-    window.Clerk.options = { 
-      navigate: {
-        afterSignIn: '/' 
-      }
-    };
-    window.Clerk.mountAuth('clerk-root');
+    // Mount the sign-in component inside the HTML element with id "sign-in".
+    window.Clerk.mountSignIn(
+      document.getElementById("sign-in")
+    );
+
+    // Open the sign-in component as a modal.
+    window.Clerk.openSignIn();
   </script>
 </body>
 </html>
