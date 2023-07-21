@@ -1,6 +1,6 @@
 fastapi
 uvicorn
 jinja2
-transformers
-torch
+# transformers
+# torch
 stripe
