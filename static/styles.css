@@ -69,6 +69,7 @@ p {
 }
 
 .icon-link {
+  padding: 10px;
   display: inline-block;
   text-decoration: none;
   color: inherit;
@@ -96,4 +97,9 @@ ul {
 
 .navbar {
   display: flex;
+  justify-content: space-between; /* This will add space between the icons */
+}
+
+.icon-link {
+  padding: 10px; /* Add padding around each icon to increase the space */
 }
