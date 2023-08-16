@@ -43,8 +43,8 @@ def credentials(request: Request):
 
 @app.get("/download-resume-pdf")
 async def download_resume():
-    resume_file_path = "static/Matt Majestic Resume.pdf"
-    return FileResponse(resume_file_path, filename="Matt Majestic Resume.pdf")
+    resume_file_path = "static/Matt J Majestic Resume.pdf"
+    return FileResponse(resume_file_path, filename="Matt J Majestic Resume.pdf)
     
 @app.get("/donate")
 async def donate(request: Request):
