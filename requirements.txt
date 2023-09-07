@@ -4,3 +4,4 @@ jinja2
 # transformers
 # torch
 stripe
+httpx

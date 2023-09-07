@@ -7,6 +7,7 @@ from fastapi.staticfiles import StaticFiles
 import stripe
 import json
 import os
+import httpx
 
 app = FastAPI()
 
@@ -79,3 +80,19 @@ async def get_blog_posts():
             return blog_posts
     except FileNotFoundError:
         return []
+
+@app.get("/readme")
+async def get_readme():
+
+    github_repo_url = "https://raw.githubusercontent.com/mattmajestic/mattmajestic/main/README.md"
+
+    async with httpx.AsyncClient() as client:
+        response = await client.get(github_repo_url)
+        if response.status_code == 200:
+            readme_content = response.text
+        else:
+            readme_content = "README not found or error fetching it."
+
+    return {"readme_markdown": readme_content}
+
+    
