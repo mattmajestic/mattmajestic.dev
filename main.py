@@ -22,24 +22,8 @@ def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
 @app.get("/credentials")
-async def display_readme(request: Request):
-    # Replace with your GitHub repository URL
-    github_repo_url = "https://raw.githubusercontent.com/mattmajestic/mattmajestic/main/README.md"
-
-    async with httpx.AsyncClient() as client:
-        response = await client.get(github_repo_url)
-        if response.status_code == 200:
-            readme_content = response.text
-        else:
-            readme_content = "README not found or error fetching it."
-
-    # Create a Jinja2 environment and render the template
-    env = Environment(loader=FileSystemLoader("templates"))
-    template = env.get_template("home.html")
-    rendered_template = template.render(readme_content=readme_content)
-
-    # Return the rendered HTML as the response
-    return HTMLResponse(content=rendered_template, status_code=200)
+def credentials(request: Request):
+    return templates.TemplateResponse("credentials.html", {"request": request})
 
 # @app.get("/signin")
 # def signin(request: Request):
