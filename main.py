@@ -8,6 +8,7 @@ import stripe
 import json
 import os
 import httpx
+import markdown2
 
 app = FastAPI()
 
@@ -83,7 +84,7 @@ async def get_blog_posts():
 
 @app.get("/readme")
 async def get_readme():
-
+    # Replace with your GitHub repository URL
     github_repo_url = "https://raw.githubusercontent.com/mattmajestic/mattmajestic/main/README.md"
 
     async with httpx.AsyncClient() as client:
@@ -93,6 +94,9 @@ async def get_readme():
         else:
             readme_content = "README not found or error fetching it."
 
-    return {"readme_markdown": readme_content}
+    # Convert the Markdown content to HTML
+    readme_html = markdown2.markdown(readme_content)
 
-    
+    # Now you have the README content in HTML format
+    # You can include this HTML in your response
+    return {"readme_html": readme_html}
