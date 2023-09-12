@@ -132,3 +132,15 @@ a {
 a:hover {
   color: #007bff;
 }
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 800px; /* Adjust the width as needed */
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+}
