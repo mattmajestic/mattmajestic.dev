@@ -83,7 +83,6 @@ async def get_blog_posts():
     except FileNotFoundError:
         return []
 
-@app.get("/readme", response_class=HTMLResponse)
+@app.get("/readme")
 async def get_readme(request: Request):
-    readme_iframe = f'<iframe srcdoc="https://mattmajestic.github.io/mattmajestic/" style="width: 100%; height: 500px;"></iframe>'
-    return templates.TemplateResponse("readme.html", {"request": request, "readme_iframe": readme_iframe})
+    return templates.TemplateResponse("readme.html", {"request": request})
