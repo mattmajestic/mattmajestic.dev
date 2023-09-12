@@ -103,3 +103,8 @@ ul {
 .icon-link {
   padding: 10px; /* Add padding around each icon to increase the space */
 }
+
+.main {
+  width: 70%;
+  margin: 0 auto; 
+}
