@@ -102,14 +102,40 @@ ul {
   padding: 10px; /* Add padding around each icon to increase the space */
 }
 
-/* Increase the width and height of the iframe */
-.iframe {
-  width: 80%; /* You can adjust this value as needed */
-  height: 600px; /* You can adjust this value as needed */
+/* Center the table on the page */
+table {
+  margin: 0 auto;
+  width: 80%; /* You can adjust this to control the table's width */
+  border-collapse: collapse;
 }
 
-/* Adjust the overall width of the main section */
-.main {
-  width: 90%; /* You can adjust this value as needed */
-  margin: 0 auto; 
+/* Style the table headers */
+th {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px 15px;
+}
+
+/* Style the table data cells */
+td {
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+}
+
+/* Style the alternate rows with a different background color */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style the links */
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+/* Change link color on hover */
+a:hover {
+  color: #007bff;
 }

@@ -86,3 +86,7 @@ async def get_blog_posts():
 @app.get("/readme")
 async def get_readme(request: Request):
     return templates.TemplateResponse("readme.html", {"request": request})
+
+@app.get("/projects")
+async def projects(request: Request):
+    return templates.TemplateResponse("projects.html", {"request": request})
