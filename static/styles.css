@@ -11,6 +11,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   margin-top: 20px;
+  width: 70%; 
 }
 
 .card {
@@ -102,7 +103,14 @@ ul {
   padding: 10px; /* Add padding around each icon to increase the space */
 }
 
+/* Increase the width and height of the iframe */
+.iframe {
+  width: 100%; /* You can adjust this value as needed */
+  height: 600px; /* You can adjust this value as needed */
+}
+
+/* Adjust the overall width of the main section */
 .main {
-  width: 70%;
+  width: 90%; /* You can adjust this value as needed */
   margin: 0 auto; 
 }
