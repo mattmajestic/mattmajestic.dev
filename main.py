@@ -83,8 +83,8 @@ async def get_blog_posts():
     except FileNotFoundError:
         return []
 
-@app.get("/readme")
-async def get_readme():
+@app.get("/readme", response_class=HTMLResponse)
+async def get_readme(request: Request):
     github_repo_url = "https://raw.githubusercontent.com/mattmajestic/mattmajestic/main/README.md"
 
     async with httpx.AsyncClient() as client:
@@ -95,4 +95,4 @@ async def get_readme():
             readme_content = "README not found or error fetching it."
 
     readme_html = markdown2.markdown(readme_content)
-    return {"readme_html": readme_html}
+    return templates.TemplateResponse("readme.html", {"request": request, "readme_html": readme_html})
