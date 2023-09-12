@@ -85,14 +85,5 @@ async def get_blog_posts():
 
 @app.get("/readme", response_class=HTMLResponse)
 async def get_readme(request: Request):
-    github_repo_url = "https://raw.githubusercontent.com/mattmajestic/mattmajestic/main/README.md"
-
-    async with httpx.AsyncClient() as client:
-        response = await client.get(github_repo_url)
-        if response.status_code == 200:
-            readme_content = response.text
-        else:
-            readme_content = "README not found or error fetching it."
-
-    readme_html = markdown2.markdown(readme_content)
-    return templates.TemplateResponse("readme.html", {"request": request, "readme_html": readme_html})
+    readme_iframe = f'<iframe srcdoc="https://mattmajestic.github.io/mattmajestic/" style="width: 100%; height: 500px;"></iframe>'
+    return templates.TemplateResponse("readme.html", {"request": request, "readme_iframe": readme_iframe})
