@@ -99,7 +99,7 @@ async def get_youtube_metrics():
         return {"error": "YouTube API key not found"}
 
     CHANNEL_ID = "UCjTavL86-CW6j58fsVIjTig"
-    url = f"https://www.googleapis.com/youtube/v3/search?key={API_KEY}&channelId={CHANNEL_ID}&part=id&maxResults=10"
+    url = f"https://www.googleapis.com/youtube/v3/search?key={API_KEY}&channelId={CHANNEL_ID}&part=id&maxResults=100"
     response = requests.get(url)
     data = response.json()
     video_ids = [item["id"]["videoId"] for item in data.get("items", []) if "id" in item and "videoId" in item["id"]]
