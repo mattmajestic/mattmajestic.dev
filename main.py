@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse, FileResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 # import torch
 # from transformers import GPT2LMHeadModel, GPT2Tokenizer
 import stripe
@@ -13,6 +14,21 @@ from jinja2 import Environment, FileSystemLoader
 import requests
 
 app = FastAPI()
+
+origins = [
+    "http://localhost",
+    "http://localhost:8080",  # Add your frontend URL(s) here
+    "https://mattmajestic.dev",
+]
+
+# Add CORS middleware with the configured origins
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True, 
+    allow_methods=["*"],    
+    allow_headers=["*"],    
+)
 
 templates = Jinja2Templates(directory="templates")
 
