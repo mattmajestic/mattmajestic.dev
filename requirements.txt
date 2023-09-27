@@ -6,3 +6,4 @@ jinja2
 stripe
 httpx
 markdown2
+requests

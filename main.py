@@ -10,6 +10,7 @@ import os
 import httpx
 import markdown2
 from jinja2 import Environment, FileSystemLoader
+import requests
 
 app = FastAPI()
 
@@ -90,3 +91,42 @@ async def get_readme(request: Request):
 @app.get("/projects")
 async def projects(request: Request):
     return templates.TemplateResponse("projects.html", {"request": request})
+
+@app.get("/youtube-metrics")
+async def get_youtube_metrics():
+    API_KEY = os.environ.get("YT_API_KEY")
+    if API_KEY is None:
+        return {"error": "YouTube API key not found"}
+
+    CHANNEL_ID = "UCjTavL86-CW6j58fsVIjTig"
+    url = f"https://www.googleapis.com/youtube/v3/search?key={API_KEY}&channelId={CHANNEL_ID}&part=id&maxResults=10"
+    response = requests.get(url)
+    data = response.json()
+    video_ids = [item["id"]["videoId"] for item in data.get("items", []) if "id" in item and "videoId" in item["id"]]
+    video_data = []
+
+    # Loop through each video ID and fetch metrics
+    for video_id in video_ids:
+        url = f"https://www.googleapis.com/youtube/v3/videos?key={API_KEY}&id={video_id}&part=statistics"
+        response = requests.get(url)
+        data = response.json()
+        if "items" in data and len(data["items"]) > 0:
+            statistics = data["items"][0]["statistics"]
+
+            # Extract video metrics
+            video_views = statistics.get("viewCount", 0)
+            video_likes = statistics.get("likeCount", 0)
+            video_comments = statistics.get("commentCount", 0)
+
+            video_metrics = {
+                "Video ID": video_id,
+                "Views": video_views,
+                "Likes": video_likes,
+                "Comments": video_comments
+            }
+
+            video_data.append(video_metrics)
+        else:
+            print(f"Statistics data not available for video with ID: {video_id}")
+
+    return video_data
