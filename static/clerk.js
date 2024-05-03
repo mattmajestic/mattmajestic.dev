@@ -1,4 +1,4 @@
-const publishableKey = "pk_test_Zmxvd2luZy1oYWdmaXNoLTUuY2xlcmsuYWNjb3VudHMuZGV2JA"; // Add your Publishable Key here
+const publishableKey = "pk_test_"; // Add your Publishable Key here
 
 const handleSignUp = async () => {
   try {
