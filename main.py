@@ -110,23 +110,36 @@ async def projects(request: Request):
 
 @app.get("/youtube-metrics")
 async def get_youtube_metrics():
+
+    # Read from .env (.gitignore)
     API_KEY = os.environ.get("YT_API_KEY")
     if API_KEY is None:
         return {"error": "YouTube API key not found"}
 
+    # not the channel name | Go to https://studio.youtube.com and should populate
     CHANNEL_ID = "UCjTavL86-CW6j58fsVIjTig"
+    
+    # Query String to YouTube API at https://developers.google.com/youtube/v3/docs
     url = f"https://www.googleapis.com/youtube/v3/search?key={API_KEY}&channelId={CHANNEL_ID}&part=id&maxResults=100"
     response = requests.get(url)
     data = response.json()
+
+    # Grabbing the Video IDs to then loop through for the specific video data
     video_ids = [item["id"]["videoId"] for item in data.get("items", []) if "id" in item and "videoId" in item["id"]]
+
+    # Initialize storage of the video_data that I'll return as json to the route of /youtube-metric
     video_data = []
 
     # Loop through each video ID and fetch metrics
     for video_id in video_ids:
+        # Query for the specific video via the id
         url = f"https://www.googleapis.com/youtube/v3/videos?key={API_KEY}&id={video_id}&part=statistics"
         response = requests.get(url)
         data = response.json()
+
+        # Return valid items by checking size of object
         if "items" in data and len(data["items"]) > 0:
+
             statistics = data["items"][0]["statistics"]
 
             # Extract video metrics
@@ -134,13 +147,14 @@ async def get_youtube_metrics():
             video_likes = statistics.get("likeCount", 0)
             video_comments = statistics.get("commentCount", 0)
 
+            # Json object to host at API Endpoint
             video_metrics = {
                 "Video ID": video_id,
                 "Views": video_views,
                 "Likes": video_likes,
                 "Comments": video_comments
             }
-
+            # Store into video_data object
             video_data.append(video_metrics)
         else:
             print(f"Statistics data not available for video with ID: {video_id}")

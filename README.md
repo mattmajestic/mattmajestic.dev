@@ -2,11 +2,10 @@
 
 Welcome to MattMajestic.dev, a FastAPI-based web application. 🚀
 
-[Visit the live website](https://mattmajestic.dev)
 
 ## Overview
 
-MattMajestic.dev is a personal website built with FastAPI, featuring a homepage, resume download, donation page, blog section, and a GitHub README display.
+A personal website built with FastAPI, featuring a homepage, resume download, donation page, blog section, and a GitHub README display.
 
 ## Features
 
@@ -37,7 +36,6 @@ Access the web application at `http://localhost:8000`. Modify the code to suit y
 ## Endpoints
 
 - **Homepage**: `/`
-- **Download Resume**: `/download-resume-pdf`
 - **Donation Page**: `/donate`
 - **Blog Section**: `/blog`
 - **GitHub README HTML**: `/readme`
